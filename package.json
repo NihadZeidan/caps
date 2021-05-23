@@ -4,6 +4,7 @@
     "description": "",
     "main": "caps.js",
     "scripts": {
+        "start": "node caps.js",
         "test": "jest --verbose --coverage"
     },
     "repository": {
