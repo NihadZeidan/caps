@@ -10,10 +10,10 @@ Author: Nihad Zeidan
 [Heroku]()
 
 
-[GitHub PR]()
+[GitHub PR](https://github.com/NihadZeidan/caps/pull/1)
 
 
-[GitHub Actions]()
+[GitHub Actions](https://github.com/NihadZeidan/caps/actions)
 
 
 ### .env requirements
