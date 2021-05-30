@@ -5,6 +5,10 @@ const myEvent = require("./events.js");
 
 
 
+myEvent.on('pickup', pickUpState);
+myEvent.on("in-transit", inTransitState)
+myEvent.on('delivered', deliveredState);
+
 function pickUpState() {
     const driver = require("./Vendor/vendor.js");
     let state = {
@@ -37,10 +41,6 @@ function inTransitState() {
     console.log(state);
 }
 
-
-myEvent.on('pickup', pickUpState);
-myEvent.on("in-transit", inTransitState)
-myEvent.on('delivered', deliveredState);
 
 
 require('./Driver/driver.js');
