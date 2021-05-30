@@ -1,17 +1,21 @@
 require("dotenv").config();
 const myEvent = require("../events.js");
-require("../Driver/driver.js");
 
 const faker = require("faker")
 const storeName = process.env.storeName
 
+require("../Driver/driver.js");
 
 
+myEvent.on("delivered", handleDelivered);
+
+function handleDelivered() {
+    console.log("Thank You !");
+};
 
 
 setInterval(() => {
 
-    // let orderId = Math.ceil(Math.random() * 10000);
 
     let addresses = ["Jarash", "Amman", "Az-Zarqa", "Aqaba", "Irbid", "Al-salt", "Al-Karak"];
 
@@ -26,19 +30,13 @@ setInterval(() => {
         address: randomAddress()
     }
 
-    myEvent.on("delivered", handleDelivered);
-
-    function handleDelivered() {
-        console.log("Thank You !");
-    };
-
     module.exports = {
         handleDelivered,
         payload: customerOrder
     }
 
 
-
     myEvent.emit("pickup", customerOrder);
+
 
 }, 5000);
